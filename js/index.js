@@ -104,6 +104,7 @@ ctaBtn.style.transition = "all 0.25s ease-in-out";
 ctaBtn.addEventListener("click", event => {
   ctaText.innerHTML = "Subscribe";
   const input = document.createElement("input");
+  input.placeholder = "Email";
   input.style.padding = "20px";
   input.style.width = "100%";
   input.style.fontSize = "1.2rem";
