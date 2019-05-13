@@ -101,6 +101,16 @@ ctaBtn.innerText = siteContent.cta.button;
 // Transition effect on button hover css
 ctaBtn.style.transition = "all 0.25s ease-in-out";
 
+ctaBtn.addEventListener("click", event => {
+  ctaText.innerHTML = "Subscribe";
+  const input = document.createElement("input");
+  input.style.padding = "20px";
+  input.style.width = "100%";
+  input.style.fontSize = "1.2rem";
+  ctaText.insertAdjacentElement("afterEnd", input);
+  ctaBtn.innerText = "Subscribe";
+});
+
 // Top section
 const topSection = document.querySelector(".top-content").children;
 const featuresSection = topSection[0];
