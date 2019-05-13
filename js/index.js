@@ -51,6 +51,18 @@ let headerLinks = document.getElementsByTagName("nav")[0].children;
 
 // Set navbar items link texts
 [...headerLinks].forEach((link, index) => {
-  let tempIndex = index + 1;
-  link.innerText = siteContent.nav[`nav-item-${tempIndex}`];
+  link.innerText = siteContent.nav[`nav-item-${index + 1}`];
 });
+
+// cta section
+const ctaText = document.querySelector(".cta-text h1");
+const ctaBtn = document.querySelector(".cta-text button");
+const ctaImage = document.querySelector("#cta-img");
+
+ctaImage.setAttribute("src", siteContent.cta["img-src"]);
+ctaText.innerHTML = siteContent.cta.h1
+  .split(" ")
+  .map(item => `<div>${item}</div>`)
+  .join("");
+
+ctaBtn.innerText = siteContent.cta.button;
