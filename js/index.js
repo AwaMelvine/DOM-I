@@ -83,7 +83,6 @@ nav.appendChild(blog);
   if (index >= 0 && index < [...nav.children].length - 1) {
     link.style.borderRight = "none";
   }
-  // link.style.padding = "15px 20px";
 });
 
 // cta section
@@ -150,7 +149,9 @@ visionSection.querySelector("p").innerText =
 const contact = document.querySelector(".contact").children;
 
 contact[0].innerText = siteContent.contact["contact-h4"];
-contact[1].innerText = siteContent.contact.address;
+contact[1].innerHTML = siteContent.contact.address
+  .split("Street")
+  .join("Street<br>");
 contact[2].innerText = siteContent.contact.phone;
 contact[3].innerText = siteContent.contact.email;
 
