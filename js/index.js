@@ -73,6 +73,19 @@ projects.style.cursor = "pointer";
 nav.prepend(projects);
 nav.appendChild(blog);
 
+// border on navigation bar links
+[...nav.children].forEach((link, index) => {
+  link.style.border = "1px solid #e0e0e0";
+  link.style.flex = 1;
+  link.style.marginTop = "0px";
+  link.style.padding = "20px 16px";
+  link.style.textAlign = "center";
+  if (index >= 0 && index < [...nav.children].length - 1) {
+    link.style.borderRight = "none";
+  }
+  // link.style.padding = "15px 20px";
+});
+
 // cta section
 const ctaText = document.querySelector(".cta-text h1");
 const ctaBtn = document.querySelector(".cta-text button");
@@ -85,6 +98,9 @@ ctaText.innerHTML = siteContent.cta.h1
   .join("");
 
 ctaBtn.innerText = siteContent.cta.button;
+
+// Transition effect on button hover css
+ctaBtn.style.transition = "all 0.25s ease-in-out";
 
 // Top section
 const topSection = document.querySelector(".top-content").children;
