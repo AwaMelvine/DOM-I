@@ -81,3 +81,7 @@ aboutSection.querySelector("h4").innerText =
   siteContent["main-content"]["about-h4"];
 aboutSection.querySelector("p").innerText =
   siteContent["main-content"]["about-content"];
+
+// Middle image
+const middleImage = document.querySelector("#middle-img");
+middleImage.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
