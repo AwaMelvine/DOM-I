@@ -48,11 +48,28 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
 // Selectors
 let headerLinks = document.getElementsByTagName("nav")[0].children;
+let nav = document.querySelector("nav");
 
 // Set navbar items link texts
 [...headerLinks].forEach((link, index) => {
   link.innerText = siteContent.nav[`nav-item-${index + 1}`];
 });
+// Change navbar text to green
+[...headerLinks].forEach(link => link.setAttribute("style", "color: green"));
+
+// Add navbar items
+const blog = document.createElement("a");
+const blogText = document.createTextNode("Blog");
+const projects = document.createElement("a");
+const projectsText = document.createTextNode("Projects");
+
+blog.appendChild(blogText);
+blog.style.color = "green";
+projects.appendChild(projectsText);
+projects.style.color = "green";
+
+nav.prepend(projects);
+nav.appendChild(blog);
 
 // cta section
 const ctaText = document.querySelector(".cta-text h1");
