@@ -62,7 +62,22 @@ const ctaImage = document.querySelector("#cta-img");
 ctaImage.setAttribute("src", siteContent.cta["img-src"]);
 ctaText.innerHTML = siteContent.cta.h1
   .split(" ")
-  .map(item => `<div>${item}</div>`)
+  .map(item => `${item}<br>`)
   .join("");
 
 ctaBtn.innerText = siteContent.cta.button;
+
+// Top section
+const topSection = document.querySelector(".top-content").children;
+const featuresSection = topSection[0];
+const aboutSection = topSection[1];
+
+featuresSection.querySelector("h4").innerText =
+  siteContent["main-content"]["features-h4"];
+featuresSection.querySelector("p").innerText =
+  siteContent["main-content"]["features-content"];
+
+aboutSection.querySelector("h4").innerText =
+  siteContent["main-content"]["about-h4"];
+aboutSection.querySelector("p").innerText =
+  siteContent["main-content"]["about-content"];
