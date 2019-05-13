@@ -85,3 +85,28 @@ aboutSection.querySelector("p").innerText =
 // Middle image
 const middleImage = document.querySelector("#middle-img");
 middleImage.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+// Bottom section
+const bottomSection = document.querySelector(".bottom-content").children;
+
+servicesSection = bottomSection[0];
+productSection = bottomSection[1];
+visionSection = bottomSection[2];
+
+// services
+servicesSection.querySelector("h4").innerText =
+  siteContent["main-content"]["services-h4"];
+servicesSection.querySelector("p").innerText =
+  siteContent["main-content"]["services-content"];
+
+// product
+productSection.querySelector("h4").innerText =
+  siteContent["main-content"]["product-h4"];
+productSection.querySelector("p").innerText =
+  siteContent["main-content"]["product-content"];
+
+// vision
+visionSection.querySelector("h4").innerText =
+  siteContent["main-content"]["vision-h4"];
+visionSection.querySelector("p").innerText =
+  siteContent["main-content"]["vision-content"];
