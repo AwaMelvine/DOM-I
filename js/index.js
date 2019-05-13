@@ -62,7 +62,7 @@ const ctaImage = document.querySelector("#cta-img");
 ctaImage.setAttribute("src", siteContent.cta["img-src"]);
 ctaText.innerHTML = siteContent.cta.h1
   .split(" ")
-  .map(item => `${item}<br>`)
+  .map((item, index) => (index > 0 ? `<br>${item}` : item))
   .join("");
 
 ctaBtn.innerText = siteContent.cta.button;
@@ -110,3 +110,14 @@ visionSection.querySelector("h4").innerText =
   siteContent["main-content"]["vision-h4"];
 visionSection.querySelector("p").innerText =
   siteContent["main-content"]["vision-content"];
+
+// contact section
+const contact = document.querySelector(".contact").children;
+
+contact[0].innerText = siteContent.contact["contact-h4"];
+contact[1].innerText = siteContent.contact.address;
+contact[2].innerText = siteContent.contact.phone;
+contact[3].innerText = siteContent.contact.email;
+
+// footer
+document.querySelector("footer p").innerText = siteContent.footer.copyright;
